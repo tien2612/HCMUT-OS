@@ -1,2 +1,0 @@
-Question 1: What resources are used when a thread is created? How do they differ from those used when a process is created?
-Question 2: Is it possible to have concurrency but not parallelism? Explain.
