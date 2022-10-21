@@ -1,0 +1,961 @@
+    1  sudo apt-get install chrome
+    2  sudo apt-get update && sudo apt-get upgrade
+    3  wget --version
+    4  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    5  sudo dpkg -i google-chrome-stable_current_amd64.deb
+    6  sudo add-apt-repository ppa:atareao/atareao
+    7  sudo apt-get update
+    8  sudo apt-get install touchpad-indicator
+    9  sudo apt get update
+   10  sudo apt-get update
+   11  sudo apt-get install build-essential gdb g++
+   12  sudo apt-get install snap
+   13  sudo snap install --classic code
+   14  cd C++
+   15  ls
+   16  code .
+   17  sudo apt-get install ibus-unikey
+   18  sudo add-apt-repository ppa:ubuntu-vn/ppa
+   19  sudo apt-get update
+   20  ibus restart
+   21  sudo apt-get update
+   22  sudo apt-get install kazam
+   23  sudo apt-get update -y
+   24  sudo apt-get install -y gnome-screenshot
+   25  sudo apt-get upgrade 
+   26  sudo apt-get update
+   27  sudo apt-get upgrade
+   28  sudo apt-get install -y gnome-screenshot
+   29  apt dist-upgrade
+   30  sudo apt dist-upgrade
+   31  sudo apt-get upgrade
+   32  sudo apt install imwheel
+   33  bash <(curl -s http://www.nicknorton.net/mousewheel.sh
+   34  #!/bin/bash
+   35  # Version 0.1 Tuesday, 07 May 2013
+   36  # Comments and complaints http://www.nicknorton.net
+   37  # GUI for mouse wheel speed using imwheel in Gnome
+   38  # imwheel needs to be installed for this script to work
+   39  # sudo apt-get install imwheel
+   40  # Pretty much hard wired to only use a mouse with
+   41  # left, right and wheel in the middle.
+   42  # If you have a mouse with complications or special needs,
+   43  # use the command xev to find what your wheel does.
+   44  #
+   45  ### see if imwheel config exists, if not create it ###
+   46  if [ ! -f ~/.imwheelrc ]
+   47  then
+   48  cat >~/.imwheelrc<<EOF
+   49  ".*"
+   50  None,      Up,   Button4, 1
+   51  None,      Down, Button5, 1
+   52  Control_L, Up,   Control_L|Button4
+   53  Control_L, Down, Control_L|Button5
+   54  Shift_L,   Up,   Shift_L|Button4
+   55  Shift_L,   Down, Shift_L|Button5
+   56  EOF
+   57  fi
+   58  ##########################################################
+   59  CURRENT_VALUE=$(awk -F 'Button4,' '{print $2}' ~/.imwheelrc)
+   60  NEW_VALUE=$(zenity --scale --window-icon=info --ok-label=Apply --title="Wheelies" --text "Mouse wheel speed:" --min-value=1 --max-value=100 --value="$CURRENT_VALUE" --step 1)
+   61  if [ "$NEW_VALUE" == "" ];
+   62  then exit 0
+   63  fi
+   64  sed -i "s/\($TARGET_KEY *Button4, *\).*/\1$NEW_VALUE/" ~/.imwheelrc # find the string Button4, and write new value.
+   65  sed -i "s/\($TARGET_KEY *Button5, *\).*/\1$NEW_VALUE/" ~/.imwheelrc # find the string Button5, and write new value.
+   66  cat ~/.imwheelrc
+   67  imwheel -kill
+   68  pwd
+   69  imwheel -kil
+   70  imwheel -b "4 5"
+   71  chmod +x mousewheel.sh
+   72  cat> mousewheel.sh
+   73  chmod +x mousewheel.sh
+   74  ./mousewheel.sh
+   75  gedit ~.imwheelrc
+   76  imwheel -kil
+   77  imwheel --kill
+   78  imwheel
+   79  sudo apt install imwheel
+   80  vim .imwheelrc
+   81  gedit ~/.imwheel rc
+   82  gedit ~/.imwheelrc
+   83  imwheel
+   84  imwheel -kill
+   85  gedit ~/.imwheelrc
+   86  imwheel -kill
+   87  sudo apt-get install neofetch
+   88  neofect
+   89  sudo apt-get update
+   90  sudo apt-get upgrade
+   91  neofetch
+   92  clear
+   93  neofetch
+   94  sudo apt-get install gnome-screen
+   95  sudo apt-get install gnome-screenshot
+   96  neofetch
+   97  sudo apt-get install codeblocks
+   98  clear
+   99  neofetch
+  100  neofetc
+  101  neofetch
+  102  sudo dpkg --add-architecture i386
+  103  sudo apt-get update
+  104  sudo apt-get upgrade
+  105  ls
+  106  ./ModelSimSetup-20.1.1.720-linux.run 
+  107  ./setup.sh
+  108  quartus
+  109  ls
+  110  ./quartus
+  111  ./setup.sh
+  112  sudo apt-get install libxft2 libxft2:i386 lib32ncurses5
+  113  sudo apt-get install libxft2 libxft2:i386 lib32ncurses6
+  114  ./vsim
+  115  ./vish
+  116  ./vsim
+  117  ls
+  118  vsim
+  119  sudo apt-get install libxrender1:i386 libxtst6:i386 libxi6:i386
+  120  exit
+  121  ./vsim
+  122  ./quartus
+  123  gedit .~/imwheelrc
+  124  gedit ~./imwheelrc
+  125  gedit ~/.imwheelrc
+  126  neofetch
+  127  clear
+  128  neofetch
+  129  sudo apt-get update
+  130  sudo apt-get upgrade
+  131  killall snap-store
+  132  sudo apt update
+  133  sudo apt purge gnome-software
+  134  sudo apt install gnome-software
+  135  sudo apt reinstall gnome-software
+  136  neofetch
+  137  gnome-software refresh
+  138  sudo apt clean # clean list of cached packages so Ubuntu Software can read them
+  139  sudo apt update && sudo apt upgrade
+  140  sudo apt autoremove gnome-software && sudo apt install gnome-software
+  141  sudo apt-get --purge --reinstall install gnome-software
+  142  ./quartus 
+  143  sudo apt-get install notepad++
+  144  sudo apt-get install pinta
+  145  sudo apt-get update
+  146  sudo apt-get upgrade
+  147  sudo dist-upgrade
+  148  sudo apt dist-upgrade
+  149  sudo apt-get update
+  150  sudo apt-get upgrade
+  151  sudo update-grub
+  152  neofetch
+  153  cd Desktop
+  154  ls
+  155  ./Quartus\ \(Quartus\ Prime\ 20.1\)\ Lite\ Edition.desktop 
+  156  sudo os-prober
+  157  sudo update-grub
+  158  neofetch 
+  159  ./quartus
+  160  pwd
+  161  update-alternatives --config gdm3-theme.gresource 
+  162  sudo apt install git make gcc libgtk-3-dev libpolkit-gobject-1-dev
+  163  sudo apt install make gcc libgtk-3-dev libpolkit-gobject-1-dev
+  164  make
+  165  sudo apt install make gcc libgtk-3-dev libpolkit-gobject-1-dev
+  166  make
+  167  sudo make install 
+  168  clear
+  169  ./quartus 
+  170  ./qauartus 
+  171  ./qartus 
+  172  ./quartus 
+  173  clear
+  174  pwd
+  175  cd Home
+  176  cd Homes
+  177  cd Desktop
+  178  neofetch 
+  179  color
+  180  neofetch 
+  181  sudo -i
+  182  cat> fucku
+  183  neofetch 
+  184  ./quartus
+  185  sudo apt-get install spotify
+  186  sudo apt install spotify
+  187  sudo snap install spotify
+  188  nèoetch
+  189  neofetch
+  190  ./quartus
+  191  ./quartu
+  192  ./quartus
+  193  sudo update-grub
+  194  neofetch
+  195  ./quartus
+  196  neofetch 
+  197  cat >fuckofff
+  198  ./quartus
+  199  neofetch 
+  200  sudo apt-get update
+  201  sudo apt-get upgrade
+  202  sudo apt-get update
+  203  exit
+  204  sudo apt-get update
+  205  neofetch 
+  206  exit
+  207  sudo apt-get install ttf-mscorefonts-installer
+  208  sudo apt-get update
+  209  sudo apt-get upgrade
+  210  sudo apt-get install ttf-mscorefonts-installer
+  211  sudo apt-dist upgrade
+  212  sudo get dist-upgrade
+  213  sudo apt-get dist-upgrade
+  214  exit
+  215  sudo reboot
+  216  sudo apt-get upgrade
+  217  sudo dpkg --configure -a
+  218  sudo add-apt-repository multiverse
+  219  sudo apt update
+  220  sudo apt install ttf-mscorefonts-installer
+  221  clear
+  222  sudo fc-cache -f -v
+  223  sudo reboot
+  224  sudo apt-get gparted
+  225  sudo apt-get install  gparted
+  226  gparted
+  227  sudo apt-get update
+  228  sudo apt-get upgrade
+  229  exit
+  230  gparted
+  231  sudo reboot 
+  232  make
+  233  sudo apt-get uninstall ibus
+  234  sudo apt-get uninstall ibus ibus-unikey
+  235  sudo apt-get remove ibus ibus-unikey
+  236  sudo apt-get remove ibus-unikey
+  237  sudo apt-get update
+  238  sudo apt-get upgrade
+  239  pwd
+  240  sudo apt-get install ibus-unikey
+  241  neofatch 
+  242  neofetch 
+  243  quartus
+  244  quaruts
+  245  quartus
+  246  ./quaruts
+  247  ./quartus
+  248  sudo apt-get update
+  249  sudo apt-get install ttf-mscorefonts-installer
+  250  sudo fc-cache -f -v 
+  251  sudo add-apt-repository multiverse
+  252  sudo apt update && sudo apt install ttf-mscorefonts-installer
+  253  sudo fc-cache -f -v
+  254  sudo apt install ttf-mscorefonts-installer
+  255  sudo apt uninstall ttf-mscorefonts-installer 
+  256  sudo apt remove ttf-mscorefonts-installer 
+  257  sudo apt install ttf-mscorefonts-installer
+  258  sudo fc-cache -vr
+  259  213
+  260  sudo apt remove ibus
+  261  sudo apt-get update
+  262  sudo apt-get upgrade
+  263  sudo reboot
+  264  sudo apt-get install ibus-unikey
+  265  sudo apt-get update
+  266  sudo apt-get install ibus-unikey
+  267  sudo apt-get upgrade
+  268  ibus restart
+  269  sudo apt remove ibus
+  270  ibus restart
+  271  sudo apt-get update
+  272  ibus restart
+  273  sudo apt remove ibus
+  274  sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+  275  sudo apt-get update
+  276  sudo apt-get intsall ibus-bamboo
+  277  sudo apt-get install ibus-bamboo
+  278  ibus restart
+  279  sudo reboot
+  280  sudo apt-get update
+  281  sudo apt-get upgrade
+  282  sudo apt install pavucontrol
+  283  pavucontrol
+  284  rm -r ~/.config/pulse/
+  285  sudo apt-get autoremove gnome-alsamixer
+  286  sudo gedit /etc/modprobe.d/alsa-base.conf
+  287  pavucontrol
+  288  sudo reboot
+  289  pavucontrol
+  290  5  /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-5zrgn2ri.8u0 
+  291  neofetch
+  292  4 5 6
+  293  8  /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-btnisvco.7jn 
+  294  3
+  295  neofetch
+  296  sudo apt-get update
+  297  sudo apt-get upgrade
+  298  sudo apt install recordmydesktop
+  299  sudo apt-get update
+  300  sudo apt-get upgrade
+  301  sudo apt-dist upgrade
+  302  apt-get dist-upgrade
+  303  apt full-upgrade
+  304  recordmyscreen
+  305  recordmydesktop
+  306  sudo apt-get dist-upgrade
+  307  recordmydesktop
+  308  sudo apt get update
+  309  sudo apt-get update
+  310  sudo apt install gtk-recordmydesktop
+  311  recordmydesktop
+  312  neofetch
+  313  sudo apt-get update
+  314  sudo apt-get upgrade
+  315  sudo apt-get upgrade -y
+  316  cat >test.txt
+  317  touch test.txt
+  318  cat > test.txt
+  319  neofetch
+  320  2 1 2 /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-q5znxnhn.3ep 
+  321  3
+  322  ;6~ /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-mncecbmz.0n3 
+  323  ./qủatus 
+  324  ./quartus
+  325  pwd
+  326  cd home
+  327  sudo apt-get update
+  328  sudo apt-get upgrade
+  329  neofetch
+  330  ./quartus
+  331  ./quartus
+  332  ./quartus
+  333  ẽit
+  334  cd /usr/share/backgrounds
+  335  cp warty-final-ubuntu.png warty-final-ubuntu.png.stock
+  336  sudo -i
+  337  sudo reboot
+  338  ./quartus
+  339  sudo apt-get install teamviewer
+  340  sudo apt install teamviewer
+  341  cd Downloads
+  342  sudo apt install ./teamviewer _amd64.deb
+  343  sudo apt install ./teamviewer_15.20.6_amd64.deb
+  344  ./quartus
+  345  ./quartus
+  346  ./quartus
+  347  sudo apt-get update
+  348  sudo apt get update
+  349  sudo apt update
+  350  sudo apt-get upgrade
+  351  sudo apt-get update
+  352  sudo apt-get upgrade
+  353  sudo reboot
+  354  sudo apt-get update
+  355  sudo apt-get upgrade
+  356  cat >myf
+  357  cat <myfile.txxt
+  358  cat <myfile.txt
+  359  cat > myfile.txt
+  360  neofetch
+  361  sudo apt-get install Kdenlive
+  362  sudo apt-get install kdenlive
+  363  sudo apt-get update
+  364  sudo apt-get upgrade
+  365  kdenlive
+  366  neofetch
+  367  sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches***
+  368  neofetch
+  369  kdenlive
+  370  neofetch
+  371  sudo apt-get update
+  372  sudo apt install breeze
+  373  kdenlive
+  374  neofetch
+  375  kdenlive
+  376  exit
+  377  kdenlive
+  378  neofetch
+  379  kdenlive
+  380  kdenlive
+  381  neofetch
+  382  kdenlive
+  383  kdenlive
+  384  kdenlive
+  385  sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+  386  sudo apt-get update
+  387  sudo apt-get install grub-customizer
+  388  grub customizer
+  389  sudo update-grub
+  390  catfile >tien.txt
+  391  ls
+  392  ./google-chrome-stable_current_amd64.deb
+  393  sudo apt-get upgrade
+  394  sudo apt-get update
+  395  sudo apt-get upgrade
+  396  sudo dpkg -i google-chrome-stable_current_amd64.deb
+  397  cd DSA LAB 1
+  398  cd "DSA LAB 1"
+  399  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  400  ./main
+  401  cd "DSA LAB 1"
+  402  ./main
+  403  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  404  ./main
+  405  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  406  ./main
+  407  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  408  ./main test000.txt
+  409  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  410  ./main test000.txt
+  411  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  412  test.cpp -o
+  413  cd hello
+  414  test.cpp -o
+  415  g++ test.cpp -o
+  416  g++ main.cpp StackFrame.cpp -o main -std=c++11 /usr/bin/env /bin/sh /tmp/Microsoft-MIEngine-Cmd-kckcoxir.v42 
+  417  cd..
+  418  cd "DSA LAB 1"
+  419  g++ main.cpp -o main -std=c++11
+  420  .\main test000.txt
+  421  main test000.txt
+  422  .\main.exe
+  423  touch main.cpp
+  424  g++ main.cpp -o main -std=c++11
+  425  ./main.exe
+  426  ./main
+  427  ./main test000.txt
+  428  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  429  ./main test000.txt
+  430  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  431  ./main test000.txt
+  432  .\main test000.txt
+  433  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  434  cd..
+  435  cd hello
+  436  cd tien2612
+  437  pwd
+  438  cd./
+  439  cd../
+  440  cd -
+  441  cd hello
+  442  gcc test.cpp -o test
+  443  sudo apt-get install snagit
+  444  sudo apt-get install shutter -y
+  445  sudo apt install shutter -y
+  446  sudo apt install snagit -y
+  447  sudo apt-get install xvidcap
+  448  sudo apt-get update
+  449  sudo apt-get install xvidcap
+  450  cheese
+  451  sudo apt install ffmpeg
+  452  sudo apt-get update
+  453  sudo apt-get upgrade
+  454  ffmpeg -i ~/Downloads/sample.webm -qscale 0 ~/Downloads/sample.mp4
+  455  ffmpeg -i ~/Videos/Webcam/cam.webm -qscale 0 ~/Videos/Webcam/cam.mp4
+  456  sudo apt-get install pandoc
+  457  pandoc --version
+  458  sudo apt-get install GrindEQ
+  459  $ wget -O ~/adobe.deb ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+  460  sudo apt update
+  461  sudo dpkg --add-architecture i386
+  462  sudo apt install gtk2-engines-murrine:i386 libatk-adaptor:i386 install libxml2:i386 libcanberra-gtk-module:i386
+  463  sudo dpkg --add-architecture i386
+  464  sudo apt install gtk2-engines-murrine:i386 libatk-adaptor:i386 install libxml2:i386 libcanberra-gtk-module:i386
+  465  sudo wget -O ~/adobe.deb ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+  466  sudo apt cài đặt libxml2: i386 gdebi-core
+  467  sudo apt install libxml2: i386 gdebi-core
+  468  sudo apt install libc6-dev-i386
+  469  sudo dpkg --add-architecture i386
+  470  sudo apt install -f
+  471  sudo apt-get update
+  472  sudo apt-get upgrade
+  473  sudo wget -O ~/adobe.deb ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/9.5.5/enu/AdbeRdr9.5.5-1_i386linux_enu.deb
+  474  sudo dpkg --add-architecture i386
+  475  sudo apt update
+  476  sudo apt install libxml2:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386 libatk-adaptor:i386
+  477  sudo dpkg -i ~/adobe.deb
+  478  cd -
+  479  cd~
+  480  ~
+  481  ..
+  482  cd ~-
+  483  cd ~
+  484  cd "DSA LAB 2"
+  485  cd C++
+  486  cd "DSA LAB 2"
+  487  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  488  ./main.exe test000.txt
+  489  main.exe test000.txt
+  490  .\main.exe test000.txt
+  491  .\main test000.txt
+  492  main test000.txt
+  493  ./main test000.txt
+  494  ./main test001.txt
+  495  ./main test000.txt
+  496  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  497  ./main test000.txt
+  498  ./main test001.txt
+  499  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  500  ./main
+  501  g++ main.cpp StackFrame.cpp -o main -std=c++11
+  502  ./main test000.txt
+  503  ./quartus
+  504  catfile > test.txt
+  505  cat > test.txt
+  506  cat >file.txt
+  507  quartus 
+  508  ./quartus
+  509  pwd
+  510  ..
+  511  cd~
+  512  cd ~
+  513  cd C++
+  514  cd hello
+  515  addtobinary.cpp -o addtobinary
+  516  g++ addtobinary.cpp -o addtobinary
+  517  sudo apt-get upgrade
+  518  sudo apt-get update -y
+  519  sudo apt shutdown -h nơ
+  520  sudo apt shutdown -h now
+  521  sudo apt-get update
+  522  sudo apt-get upgrade
+  523  sudo apt-get update
+  524  sudo apt-get upgrade
+  525  E
+  526  killall -9 apt-get
+  527  kill pid
+  528  sudo apt-get updare
+  529  sudo apt-get update
+  530  sudo apt-get upgrade
+  531  apt search nvidia-driver
+  532  apt-cache search 'nvidia-driver-' | grep '^nvidia-driver-[[:digit:]]*'
+  533  sudo apt update
+  534  sudo apt get upgrade
+  535  sudo apt upgrade
+  536  sudo apt install vim
+  537  kill pid 67113
+  538  $pid
+  539  $ps
+  540  ps
+  541  sudo apt kill pid
+  542  killall5 -9
+  543  ps
+  544  sudo apt get update
+  545  sudo apt-get update
+  546  sudo apt install vim
+  547  sudo dpkg --configure
+  548  sudo dpkg --configure -a
+  549  sudo apt install vium
+  550  sudo apt install vim
+  551  killall5 -9
+  552  ping google.com
+  553  ps
+  554  cat > hello.c
+  555  vi hello.c
+  556  catfile > test.txt
+  557  cat > test.txt
+  558  ps
+  559  sudo -i
+  560  ps -a
+  561  neofetch
+  562  gedit hello.c
+  563  gcc -o hello hello.c
+  564  gedit hello.c
+  565  gcc -o hello hello.c
+  566  gedit hello.c
+  567  gcc -c hello.c
+  568  gedit hello.c
+  569  gcc -c hello.c
+  570  gcc -c -o hello.o hello.c
+  571  gcc -o hello hello.o
+  572  gcc -o hello hello.c
+  573  ./hello
+  574  printenv
+  575  gedit .profile
+  576  source .profile
+  577  hello
+  578  vim
+  579  gedit hello.c
+  580  exit
+  581  touch test.txt
+  582  gedit hello.c
+  583  hello
+  584  ./hello
+  585  :wq
+  586  wq
+  587  exit
+  588  top
+  589  ls -a
+  590  ls
+  591  help
+  592  -help
+  593  ls -help
+  594  ls --help
+  595  ls -A
+  596  ls -a
+  597  clea
+  598  clear
+  599  cd ~
+  600  touch hello.c
+  601  gcc -o hello hello.c
+  602  ./hello
+  603  touch main.c
+  604  touch hello.h
+  605  touch hello.c
+  606  touch test.txt
+  607  vim test.txt
+  608  gcc main.o hello.o -o hello
+  609  gcc -c main.c
+  610  gcc -c main.c hello.h
+  611  main.c hello .h gcc -c main.c
+  612  clear
+  613  gcc -o main main.c hello.h
+  614  gcc -o main hello.h
+  615  clear
+  616  vim test.tt
+  617  vim test.txt
+  618  all: main.o hello.o gcc main.o hello.o -o hello
+  619  gcc -o main main.o
+  620  gcc -c main.c
+  621  cd ls
+  622  ls
+  623  cd Desktop
+  624  gcc -o main.c
+  625  gcc -c main.c
+  626  main.o: main.c hello.h
+  627  gcc -c main.c
+  628  gcc -o main main.c
+  629  gcc -c main.c hello.h
+  630  touch makefile.txt
+  631  make
+  632  go: go.c primes.c
+  633  ./makefile
+  634  ./makefile.txt
+  635  gcc -o hello -c main.c hello.c hello.h
+  636  gcc -o hello -c main.c hello.c 
+  637  ./makefile.txt
+  638  make main
+  639  clear
+  640  make all
+  641  ./makefile
+  642  ./makefile.txt
+  643  vim makefile.txt
+  644  make makefile.txt
+  645  vim makefile.txt
+  646  clear
+  647  vim makefile.txt
+  648  ls -a
+  649  rm .makefile.txt.swp 
+  650  rm -f .test.txt.swp 
+  651  ls -a
+  652  vim makefile.txt
+  653  gcc -o main main.c hello.c -I
+  654  gcc -o main main.c hello.c -I.
+  655  gcc -o hellomake hellomake.c hellofunc.c -I.
+  656  cd Desktop
+  657  gcc -o hellomake hellomake.c hellofunc.c -I
+  658  gcc -o hellomake hellomake.c hellofunc.c -I.
+  659  ./hellomake
+  660  touch makefile.txt
+  661  ./makefile.txt
+  662  make makefile
+  663  ./makefile.txt
+  664  ls
+  665  ./makefile.txt
+  666  vim makefile.txt
+  667  make hellomake
+  668  make clean
+  669  make hellomake.o
+  670  hellomake
+  671  ./hellomake
+  672  clear
+  673  make clean
+  674  make makefile-clean
+  675  make makefile
+  676  make
+  677  clear
+  678  make
+  679  ./hellomake
+  680  make
+  681  make makefile
+  682  gcc -o main main.c hello.c -I.
+  683  ./main
+  684  ./Makefile.txt
+  685  make all
+  686  make init
+  687  make main
+  688  make main.o
+  689  make
+  690  make clean
+  691  touch Makefile
+  692  make
+  693  ls
+  694  make
+  695  clear
+  696  make
+  697  clear
+  698  cd Desktop 
+  699  make
+  700  ls
+  701  make
+  702  'ls -a
+  703  q
+  704  cd Desktop 
+  705  ls -a
+  706  rm -f .Makefile.swp 
+  707  ls -a
+  708  make
+  709  cat hello.c
+  710  nano Makefile
+  711  make
+  712  nano Makefile
+  713  make
+  714  nano Makefile
+  715  make
+  716  ls
+  717  cat Makefile
+  718  make
+  719  nano Makefile
+  720  make
+  721  nano Makefile
+  722  make
+  723  nano Makefile
+  724  make
+  725  nano Makefile
+  726  make
+  727  nano Makefile
+  728  make
+  729  cat Makefile
+  730  nano Makefile
+  731  make
+  732  ls -a
+  733  make
+  734  touch main.c
+  735  touch hello.c
+  736  touch hello.h
+  737  touch Makefile
+  738  nano Makefile
+  739  make
+  740  make all
+  741  ./all
+  742  ./main
+  743  make main.o
+  744  main
+  745  ./main.exe
+  746  ./main.o
+  747  ./hello
+  748  cat main
+  749  cat main.c
+  750  cat > pid
+  751  ls
+  752  ls -a
+  753  gcc -c pid.c
+  754  gcc -c pidd.c
+  755  gcc -c main.c
+  756  gcc -c pid.c
+  757  gcc pid.c -o pid
+  758  gcc -c pid.c
+  759  touch pdd.c
+  760  gcc -c pdd.c
+  761  gcc -o pdd.o pdd
+  762  gcc -o pdd pdd.o
+  763  ./pdd
+  764  sudo apt get install vim
+  765  sudo apt-get install vim
+  766  sudo dpkg --configure -a
+  767  sudo apt-get install vim
+  768  sudo apt-get install pycharm
+  769  sudo apt-get install pycharm-community --classic
+  770  sudo snap install pycharm-community --classic
+  771  sudo apt update && sudo apt upgrade
+  772  sudo apt install software-properties-common -y
+  773  sudo apt-dist update
+  774  sudo apt-get update
+  775  sudo apt-get upgrade -y
+  776  sudo apt install software-properties-common -y
+  777  sudo add-apt-repository ppa:deadsnakes/ppa -y
+  778  sudo apt update
+  779  ssudo apt install python3.8 -y
+  780  sudo apt install python3.8 -y
+  781  python3.8 --version
+  782  sudo apt update
+  783  sudo apt-get install onedrive
+  784  onedrive
+  785  systemctl --user enable onedrive
+  786  systemctl --user start onedrive
+  787  onedrive
+  788  sudo apt remove onedrive
+  789  sudo apt install libnotify-dev
+  790  git clone https://github.com/abraunegg/onedrive.git
+  791  sudo apt update
+  792  sudo apt-get install git
+  793  git
+  794  git clone https://github.com/abraunegg/onedrive.git
+  795  cd onedrive
+  796  ./configure
+  797  sudo make
+  798  cd ~
+  799  onedrive
+  800  pwwd
+  801  pwd
+  802  onedrive
+  803  w
+  804  cd Desktop
+  805  make
+  806  make all
+  807  wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg > /dev/null
+  808  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] ://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_22.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
+  809  sudo apt update
+  810  sudo apt install onedrive
+  811  onedrive
+  812  sudo apt remove onedrive
+  813  sudo apt install http://archive.ubuntu.com/ubuntu/pool/universe/o/onedrive/onedrive_2.3.13-1build2_amd64.deb
+  814  cd Downloads
+  815  ls
+  816  cd ~
+  817  onedrive
+  818  s it only gets updated when Debian packages are updated.
+  819  sudo apt remove onedrive
+  820  sudo add-apt-repository --remove ppa:yann1ck/onedrive
+  821  sudo rm -rf /var/lib/dpkg/lock-frontend
+  822  sudo rm -rf /var/lib/dpkg/lock
+  823  sudo apt update
+  824  sudo apt upgrade -y
+  825  sudo apt dist-upgrade -y
+  826  sudo apt autoremove -y
+  827  sudo apt autoclean -y
+  828  clear
+  829  sudo apt update
+  830  wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg > /dev/null
+  831  cho "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_20.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
+  832  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_20.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
+  833  sudo apt update
+  834  sudo apt install onedrive -y
+  835  onedrive
+  836  onedrive --synchronize
+  837  cd Downlaods
+  838  cd Downloads
+  839  sudo apt install ./insync*.deb
+  840  insync
+  841  ps -a
+  842  ls /proc/<pid>
+  843  ls /proc/44368
+  844  cat /proc/44368/cmdline
+  845  cat /proc/44368/status
+  846  cat /proc/44368/máp
+  847  cat /proc/44368/maps
+  848  ldd loop_process
+  849  linux−gate . so .1 (0xb77dc000)
+  850  l ibc . so .6 => /l ib/l ibc . so .6 (0xb76b6000)
+  851  clear
+  852  ldd hello
+  853  readelf -Ws /lib/libc.so.6 | grep sleep
+  854  readelf -Ws /lib/ | grep sleep
+  855  readelf −Ws /l ib/l ibc . so .6 | grep sleep
+  856  clear
+  857  readelf −Ws /lib/libc.so.6 | grep sleep
+  858  clear
+  859  readelf −Ws /lib/libc.so.6 | grep sleep
+  860  readelf -Ws /lib/libc.so.6 | grep sleep
+  861  readelf -Ws /lib/libc | grep sleep
+  862  clear
+  863  ./hello
+  864  make all
+  865  open main.c
+  866  nono main.c
+  867  nano main.c
+  868  make all
+  869  nano main.c
+  870  make all
+  871  ./hello
+  872  make all
+  873  ./hello
+  874  make all
+  875  ./hello
+  876  make all
+  877  ./hello
+  878  make all
+  879  ./hello
+  880  ps
+  881  python --version
+  882  python3 --version
+  883  sudo apt update
+  884  sudo apt upgrade -y
+  885  cl;ear
+  886  clear
+  887  neofetch
+  888  clear
+  889  make all
+  890  ./hello
+  891  nano main;.c
+  892  nano main.c
+  893  make all
+  894  ./hello
+  895  nano main.c
+  896  make all
+  897  ./hello
+  898  touch main.c
+  899  nano main.c
+  900  gcc -c main.c
+  901  gcc -o main.o main
+  902  gcc -o main main.o
+  903  ./main
+  904  gcc -o main main.o
+  905  ./main
+  906  touch Makefile
+  907  nano Makefile
+  908  make all
+  909  ./main
+  910  make all
+  911  ./main
+  912  make all
+  913  ./main
+  914  make all
+  915  ./main
+  916  make all
+  917  ./main
+  918  gcc -o main main.o
+  919  ./main
+  920  gcc -o main main.o
+  921  ./main
+  922  gcc -c main.c
+  923  ./main
+  924  gcc -o main main.o
+  925  ./main
+  926  touch answer.txt
+  927  touch example.txt
+  928  vim example.txt
+  929  clear
+  930  ls
+  931  ls -a
+  932  cat  example.txt
+  933  vim
+  934  cd Desktop
+  935  cd Exercise
+  936  cd Basic
+  937  vim example.txt
+  938  head -n5 example.txt
+  939  vim example.txt
+  940  cat ~/.bash_history
+  941  history > history.txt
+  942  history
+  943  history -w > history.txt
+  944  history
+  945  history -w
+  946  head -n5 example.txt
+  947  vim example.txt
+  948  cat ~/.bash_history
+  949  history > history.txt
+  950  history
+  951  history -w > history.txt
+  952  history
+  953  history -w
+  954  help history
+  955  history -a
+  956  history -w ~/session+old_history
+  957  history
+  958  help history
+  959  history > history.txt
+  960  history -a > history.txt
+  961  history > history.txt

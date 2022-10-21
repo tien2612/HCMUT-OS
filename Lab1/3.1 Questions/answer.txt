@@ -1,0 +1,10 @@
+Trả lời câu hỏi cho 3.1 Questions
+
+1. What are the advantages of Makefile? Give examples?
+Answer: Makefile giúp cho ta compile chương trình thuận tiện hơn. Ví dụ khi ta thay đổi 1 thứ gì đó trong code thì nếu không có Makefile, ta phải build lại toàn bộ, rất mất thời gian. Do đó khi có Makefile,  ta chỉ cần sử dụng command "make all".
+.
+2. In case of source code files located in different places, how can we write a Makefile?
+Answer: Nếu các source code được đặt ở các thư mục khác nhau, khi viết Makefile, chúng ta có thể sử dụng đường dẫn, ví dụ: src/lab01/*.c
+
+3. What the output will be at LINE A? Explain your answer.
+Answer: Khi thực thi đoạn chương trình, lệnh pid = fork() được thực thi sẽ phân thân thành 2 tiến trình giống nhau. Tuy nhiên 2 chương đều có vùng nhớ riêng, do đó khi cập nhât value ở tiến trình con nó sẽ không liên quan đến biến value ở tiến trình cha. Cho nên output cuối cùng sẽ là Parent: value = 5. Nếu ta thêm dòng in kết quả của value ở tiến trình con thì kết quả cuối cùng sẽ là: CHILD: Value = 5; PARENT: Value = 5.

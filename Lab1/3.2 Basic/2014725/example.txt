@@ -1,0 +1,31 @@
+1.Create a new directory entitled with your student ID
+- Command: mkdir 2014725
+
+2. Create a new file example.txt under folder <StudentID> with the following content:
+//2014725
+To start vim editor, run the command: vim
+The editor is now in command mode. To start editing the file content, enter:
+:i[enter]
+To save: :w
+To save and exit: :wq
+To exit: :q
+- Command: 
+ 	+ touch example.txt 
+ 	+ vim example.txt
+ 	+ Press Insert and edit
+ 	+ Press ESC then save file   :wq
+
+3. List the content of <2014725> directory: 
+- Command line: ls -a
+
+4. View the content of file example.txt: 
+- Command line: cat example.txt
+
+5. Show first 5 lines from example.txt: 
+- Command line: head -n5 example.txt
+
+6. Show last 5 lines from example.txt: 
+- Command line: tail -n5 example.txt
+
+7. List all commands that have been run from that terminal session and save to <2014725>-history.txt: 
+- Command line: history > history.txt
