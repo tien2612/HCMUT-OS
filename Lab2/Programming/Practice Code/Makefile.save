@@ -1,0 +1,17 @@
+all: main.o
+	gcc -o main main.o
+
+main.o: main.c
+	gcc -c main.c
+
+reader: reader.o
+	gcc -o reader reader.o
+reader.o: reader.c
+	gcc -c reader.c
+
+writer: writer.o
+	gcc -o writer writer.o
+
+writer.o: writer.c
+
+	gcc -c writer.c
