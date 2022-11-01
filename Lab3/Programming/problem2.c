@@ -11,11 +11,12 @@
 int seednum = 5000;			// limit max number can be generated
 
 int *buf;				// global array to store random number
-int sumbuff = 0;			// total sum of array 'buf'
+long long int sumbuf = 0;			// total sum of array 'buf'
 	
 typedef struct {
 	int start;
 	int end;
+	int sum;
 } _range;
 
 int* generate_array_data(int *buf, int arraysize, int seednum) {
@@ -30,14 +31,12 @@ void* sum_worker(void *k) {
 	_range *idx_range= (_range*)k;
 	printf("In worker from %d to %d\n" , idx_range->start, idx_range->end) ;
 	for(int  i = idx_range->start; i < idx_range->end; i++){    
-		sumbuff += buf[i];
+		idx_range->sum += buf[i];
 	}
 	pthread_exit(EXIT_SUCCESS);
 }
 //
 int main(int argc, char* argv[]){
-	// Start calculating time of a program
-
 	srand(time(NULL));
 	pthread_t tid[tnum];
 	_range idx_range[tnum];
@@ -45,6 +44,10 @@ int main(int argc, char* argv[]){
 	
 	int rem = 0;
 	int step = 0;
+		
+	// If the system generates fewer arrsz than the number of threads, so only 'arrsz' threads need to be created.
+	// and step of each thread is 1
+	// else we dont need to worry about it.
 	if (arrsz < tnum) {
 		rem = tnum - arrsz; // Number of threads doesnt need to create
 		step = 1;
@@ -54,10 +57,7 @@ int main(int argc, char* argv[]){
 	// init array 'buf'
 	buf = malloc(sizeof(_range) + arrsz * sizeof(int));
 	buf = generate_array_data(buf, arrsz, seednum);
-	
-	// If the system generates fewer arrsz than the number of threads, so only 'arrsz' threads need to be created.
-	// and step of each thread is 1
-	// else we dont need to worry about it.
+
 	int max_index;//
 	if (rem != 0) {
 		 max_index = arrsz;
@@ -66,16 +66,18 @@ int main(int argc, char* argv[]){
 	for (int i = 0; i < max_index; i++) {
 		idx_range[i].start = step * i;
 		idx_range[i].end = step * (i + 1);
+		idx_range[i].sum = 0;
 		pthread_create(&tid[i], NULL, sum_worker, &idx_range[i]);
 	}
 
 	// Join all threads
 	for (int i = 0; i < max_index; i++) {
 		pthread_join(tid[i],NULL);
+		sumbuf += idx_range[i].sum;
 	}
 
 	free(buf);
-	printf("Total sum of buf is: %d\n", sumbuff);
+	printf("Total sum of buf is: %lld\n", sumbuf);
 	pthread_exit(EXIT_SUCCESS);
 	return 0;
 }

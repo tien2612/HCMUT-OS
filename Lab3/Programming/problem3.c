@@ -3,57 +3,83 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <unistd.h>
+#include <time.h>
+#include <signal.h>
 
 #define MAX_LOG_LENGTH 	10
 #define MAX_BUFFER_SLOT	5
 
 char **logbuf;
 
-typedef struct {
-	int current_index;
-	int wait;
-} Protect;
+pthread_mutex_t mutex;
+int current_index = 0;  // current index of logbuf
 
-Protect protect;
+// generate random string to passing as an argument (new_data) to wrlog
+char *randstring(size_t length) {
 
-void protect_init(Protect protect) {
-	protect.current_index = 0;
-	protect.wait = 5;
+    static char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.-#'?!";        
+    char *randomString = NULL;
+
+    if (length) {
+        randomString = malloc(sizeof(char) * (length +1));
+
+        if (randomString) {            
+            for (int n = 0;n < length;n++) {            
+                int key = rand() % (int)(sizeof(charset) -1);
+                randomString[n] = charset[key];
+            }
+
+            randomString[length] = '\0';
+        }
+    }
+
+    return randomString;
 }
 
-// int wrlog(char **logbuf, char *new_data);
-int wrlog(int log[MAX_BUFFER_SLOT], int new_data) {
-	log[protect.current_index] = new_data;
-	protect.current_index++;
-	return new_data;
+int wrlog ( /*char** logbuf ,*/ char* new_data );
+int flushlog ( /*char** logbuf*/ );
+
+int main () {
+    srand(time(NULL));
+	pthread_mutex_init(&mutex,NULL);    
+    logbuf = (char**)malloc(MAX_BUFFER_SLOT * sizeof(char)*MAX_LOG_LENGTH);
+
+    // append 10 * MAX_BUFFER_SLOT = 50 log with random max string length is MAX_LOG_LENGTH
+    for (int i = 0; i < 10 * MAX_BUFFER_SLOT; i++)
+        wrlog( randstring(rand() % MAX_LOG_LENGTH) ) ;
+
+    printf("Last flushlog(), the new log becomes an empty log.\n");
+    flushlog();
+    printf("Check if we can use flushlog() to an empty log !!\n");
+    pthread_mutex_destroy(&mutex);
+    //pthread_cond_destroy(&limit);
+    free(logbuf);
+    return 0;
+}
+
+int wrlog(char *new_data) {
+	if (current_index == MAX_BUFFER_SLOT) {
+        pthread_mutex_lock(&mutex);
+        flushlog();
+    }
+    printf("wrlog(): %s\n", new_data);
+    logbuf[current_index] = new_data;
+    current_index++;
+    return 1;
 }
 
 // int flushlog(int log[MAX_BUFFER_SLOT]);
-void flushlog(int log[MAX_BUFFER_SLOT]) {
-	printf("flushlog()\n");
-	for (int i = 0; i < MAX_BUFFER_SLOT; i++) {
-		printf( "Slot %d: %d\n", i, log[i] );
-	}
+int flushlog(/*char** logbuf*/){
+    for (int i = 0 ;i < current_index; i++){
+        printf("flushlog() slot %d: %s\n", i, logbuf[i]);
+        logbuf[i] = "";
+    }
+    int tmp = current_index;
+    current_index = 0;
+    if (tmp == MAX_BUFFER_SLOT){
+        for (int i = 0 ;i < tmp;i++){
+            pthread_mutex_unlock(&mutex);
+        }
+    }
+    return 0;
 }
-int main () {
-	int log[MAX_BUFFER_SLOT] = {0};
-	alarm(5);
-	// protect_init(protect);
-
-	srand(time(NULL));
-	while(1) {
-		if (protect.wait > 0)  {
-			printf("wrlog(): %d\n", wrlog(log, rand() % 20));
-			protect.wait--;
-		} else {
-			flushlog(log);
-			protect.wait = 5;
-			protect.current_index = 0;
-		}
-	}
-	return 0;
-}
-
-
-
-
