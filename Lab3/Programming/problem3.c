@@ -41,7 +41,8 @@ int flushlog ( /*char** logbuf*/ );
 
 int main () {
     srand(time(NULL));
-	pthread_mutex_init(&mutex,NULL);    
+    pthread_mutex_init(&mutex,NULL);    
+    
     logbuf = (char**)malloc(MAX_BUFFER_SLOT * sizeof(char)*MAX_LOG_LENGTH);
 
     // append 10 * MAX_BUFFER_SLOT = 50 log with random max string length is MAX_LOG_LENGTH
